@@ -4,11 +4,9 @@ vim.g.mapleader = " "
 
 -- auto format documents
 vim.keymap.set("n", "<leader>F", function()
-        require("conform").format(
-                {
-                        lsp_format = "fallback"
-                }
-        )
+	require("conform").format({
+		lsp_format = "fallback",
+	})
 end, { desc = "format current file" })
 
 -- keymap to save file
@@ -29,7 +27,6 @@ vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Move to lower window" })
 vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Move to upprt window" })
 vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Move to right window" })
 
-
 -- Reselect after indenting
 vim.keymap.set("v", "<", "<gv", { desc = "Indent left and reselect" })
 vim.keymap.set("v", ">", ">gv", { desc = "Indent right and reselect" })
@@ -48,3 +45,8 @@ vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagn
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Previous diagnostic" })
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Next diagnostic" })
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Diagnostics list" })
+
+-- LSP Info
+vim.keymap.set("n", "<C-k>", function()
+	vim.lsp.buf.hover()
+end, { desc = "Show documentation from lsp" })

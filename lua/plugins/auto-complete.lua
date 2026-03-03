@@ -6,7 +6,6 @@ return {
 
 		-- use a release tag to download pre-built binaries
 		version = "1.*",
-
 		---@module 'blink.cmp'
 		---@type blink.cmp.Config
 		opts = {
@@ -21,6 +20,12 @@ return {
 
 			-- (Default) Only show the documentation popup when manually triggered
 			completion = {
+				menu = {
+					border = "rounded",
+				},
+				ghost_text = {
+					enable = true,
+				},
 				documentation = {
 					auto_show = true,
 					auto_show_delay_ms = 200,
@@ -30,6 +35,7 @@ return {
 					},
 				},
 			},
+
 			signature = { completion = true },
 
 			-- Default list of enabled providers defined so that you can extend it
