@@ -13,6 +13,7 @@ return {
 			lua_ls = {},
 			gopls = {},
 			pyright = {},
+			bashls = {},
 		},
 	},
 
