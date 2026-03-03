@@ -27,6 +27,7 @@ return {
 			"black", -- python code formatter
 			"goimports", -- go automatic imports
 			"gofumpt", -- go code formatter
+			"djlint", -- format html django and go templates
 		})
 		require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
@@ -47,7 +48,7 @@ return {
 		-- Diagnostics configurations
 		vim.diagnostic.config({
 			severity_sort = true,
-			float = { border, "rounded", source = "if_many" },
+			float = { border = "rounded", source = "if_many" },
 			underline = { severity = vim.diagnostic.severity.ERROR },
 			signs = vim.g.have_nerd_font and {
 				[vim.diagnostic.severity.ERROR] = "",
