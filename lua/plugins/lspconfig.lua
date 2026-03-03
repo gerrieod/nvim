@@ -16,7 +16,6 @@ return {
 			bashls = {},
 		},
 	},
-
 	config = function(_, opts)
 		local capabilities = require("blink.cmp").get_lsp_capabilities()
 		-- Ensure packages installed for non lsp's
