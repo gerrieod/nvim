@@ -23,11 +23,10 @@ return {
 		vim.list_extend(ensure_installed, {
 			"stylua", -- Used format lua code
 			"prettierd", -- Used to format javascript
-			"isort", -- python sort alphabetically
-			"black", -- python code formatter
 			"goimports", -- go automatic imports
 			"gofumpt", -- go code formatter
 			"djlint", -- format html django and go templates
+			"ruff",
 		})
 		require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
@@ -50,6 +49,7 @@ return {
 			severity_sort = true,
 			float = { border = "rounded", source = "if_many" },
 			underline = { severity = vim.diagnostic.severity.ERROR },
+			update_in_insert = false,
 			signs = vim.g.have_nerd_font and {
 				[vim.diagnostic.severity.ERROR] = "",
 				[vim.diagnostic.severity.WARN] = "",

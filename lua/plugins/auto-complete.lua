@@ -10,7 +10,10 @@ return {
 		---@type blink.cmp.Config
 		opts = {
 
-			keymap = { preset = "default" },
+			keymap = {
+				["<Tab>"] = { "accept", "fallback" },
+				preset = "default",
+			},
 
 			appearance = {
 				-- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
